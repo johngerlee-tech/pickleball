@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>溪洲國小匹克球樂活俱樂部 - 場地使用規範與輪場分流公約</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-dark: #0f3730;
+      --primary-teal: #134e4a;
+      --accent-gold: #f59e0b;
+      --accent-red: #dc2626;
+      --accent-blue: #1d4ed8;
+      --accent-green: #15803d;
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --bg-page: #f8fafc;
+      --card-border: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #e2e8f0;
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      padding: 24px 12px;
+      line-height: 1.5;
+    }
+
+    .poster-container {
+      width: 100%;
+      max-width: 860px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #09332c 0%, #115e59 100%);
+      color: #ffffff;
+      padding: 24px 32px;
+      position: relative;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .header-title-box h1 {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .header-title-box p {
+      font-size: 15px;
+      font-weight: 500;
+      color: #a7f3d0;
+      letter-spacing: 1px;
+    }
+
+    .header-badge {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      padding: 8px 16px;
+      border-radius: 30px;
+      text-align: right;
+      backdrop-filter: blur(4px);
+    }
+
+    .header-badge .org {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      display: block;
+    }
+
+    .header-badge .version {
+      font-size: 12px;
+      font-weight: 700;
+      color: #fde047;
+      display: inline-block;
+      margin-top: 2px;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+
+    /* Key Information Cards */
+    .key-info-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding: 20px 32px;
+      background: #f1f5f9;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .info-card {
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .icon-time { background: #fee2e2; }
+    .icon-ppl { background: #e0f2fe; }
+    .icon-court { background: #dcfce7; }
+
+    .info-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .info-value {
+      font-size: 15px;
+      font-weight: 900;
+      color: #0f172a;
+    }
+
+    .highlight-badge {
+      background: #ef4444;
+      color: #ffffff;
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-weight: 900;
+      display: inline-block;
+      margin-left: 4px;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: #0f3730;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-left: 5px solid #0d9488;
+      padding-left: 10px;
+    }
+
+    .section-title .tag {
+      font-size: 12px;
+      font-weight: 700;
+      background: #fee2e2;
+      color: #b91c1c;
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid #fca5a5;
+    }
+
+    .rules-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .rules-list li {
+      font-size: 14.5px;
+      color: #1e293b;
+      line-height: 1.6;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .rules-list li::before {
+      content: "•";
+      color: #0d9488;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .rule-title {
+      font-weight: 800;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+
+    /* Courts Grid */
+    .court-intro {
+      font-size: 14px;
+      font-weight: 500;
+      color: #334155;
+      margin-bottom: 2px;
+    }
+
+    .courts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .court-card {
+      border-radius: 12px;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-width: 2px;
+      border-style: solid;
+      background: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .court-card.court-a {
+      border-color: #ef4444;
+      background: #fef2f2;
+    }
+
+    .court-card.court-b {
+      border-color: #10b981;
+      background: #f0fdf4;
+    }
+
+    .court-card.court-c {
+      border-color: #3b82f6;
+      background: #eff6ff;
+    }
+
+    .court-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .court-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .court-a .court-badge { background: #dc2626; }
+    .court-b .court-badge { background: #059669; }
+    .court-c .court-badge { background: #2563eb; }
+
+    .court-name {
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .court-a .court-name { color: #991b1b; }
+    .court-b .court-name { color: #065f46; }
+    .court-c .court-name { color: #1e40af; }
+
+    .court-desc {
+      font-size: 13px;
+      font-weight: 500;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    /* Key Warning Banner */
+    .alert-banner {
+      background: #fffbeb;
+      border: 2px solid #f59e0b;
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-top: 6px;
+    }
+
+    .alert-icon {
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .alert-text {
+      font-size: 14.5px;
+      color: #78350f;
+      line-height: 1.6;
+    }
+
+    .alert-strong {
+      color: #b45309;
+      font-weight: 900;
+      background: #fef3c7;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid #fde68a;
+    }
+
+    /* High Contrast Consecutive Win Highlight */
+    .win-highlight {
+      background: #fee2e2;
+      color: #b91c1c;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 800;
+      border: 1px solid #fca5a5;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 18px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 500;
+      border-top: 1px solid #334155;
+    }
+
+    .footer-highlight {
+      color: #38bdf8;
+      font-weight: 700;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+      }
+      .poster-container {
+        max-width: 100%;
+        box-shadow: none;
+        border: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .key-info-bar, .courts-grid {
+        grid-template-columns: 1fr;
+      }
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="poster-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-title-box">
+          <h1>溪洲國小匹克球樂活俱樂部</h1>
+          <p>場地使用規範與輪場分流公約</p>
+        </div>
+        <div class="header-badge">
+          <span class="org">溪洲國小家長會 訂定</span>
+          <span class="version">最新修訂美化版</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 3 Key Information Cards -->
+    <div class="key-info-bar">
+      <!-- Card 1: Time -->
+      <div class="info-card">
+        <div class="info-icon icon-time">⏰</div>
+        <div class="info-details">
+          <span class="info-label">活動時間</span>
+          <span class="info-value">每週五 19:30 - 21:00</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Max People (Updated to 24) -->
+      <div class="info-card">
+        <div class="info-icon icon-ppl">👥</div>
+        <div class="info-details">
+          <span class="info-label">開團人數</span>
+          <span class="info-value">滿 4 人開團 / 上限 <span class="highlight-badge">24 人</span></span>
+        </div>
+      </div>
+
+      <!-- Card 3: Courts -->
+      <div class="info-card">
+        <div class="info-icon icon-court">🎾</div>
+        <div class="info-details">
+          <span class="info-label">場地配置</span>
+          <span class="info-value">2 面比賽場 + 1 面練習場</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Body -->
+    <main class="main-content">
+
+      <!-- Section 1: Registration -->
+      <section class="section">
+        <h2 class="section-title">一、 登記與報到事項</h2>
+        <ul class="rules-list">
+          <li>
+            <span><strong class="rule-title">LINE 事先預約：</strong>請於群組清楚登記本人及同行親友/孩子姓名與總人數，不接受現場臨時加人。</span>
+          </li>
+          <li>
+            <span><strong class="rule-title">報到截止時間：</strong>請於 <strong style="color: #b91c1c;">19:50 前</strong>完成報到，逾時視同放棄，名額將釋出給候補人員。</span>
+          </li>
+          <li>
+            <span><strong class="rule-title">請假規則：</strong>不克前往者請盡早於群組告知，以便即時安排候補夥伴入場。</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 2: Court Allocation & Queueing -->
+      <section class="section">
+        <h2 class="section-title">
+          二、 球場分流與輪場排隊公約
+          <span class="tag">重點規定</span>
+        </h2>
+        <p class="court-intro">為解決程度差異與佔場問題，現場依球技程度區分不同功能球場，請依專屬<strong>「排隊看板」</strong>掛卡輪替：</p>
+        
+        <!-- Courts Cards -->
+        <div class="courts-grid">
+          <!-- Court A -->
+          <div class="court-card court-a">
+            <div class="court-header">
+              <span class="court-badge">A</span>
+              <span class="court-name">高手挑戰場</span>
+            </div>
+            <p class="court-desc">適合具網球/球類底子、想切磋球技與打高強度對抗賽的夥伴。</p>
+          </div>
+
+          <!-- Court B -->
+          <div class="court-card court-b">
+            <div class="court-header">
+              <span class="court-badge">B</span>
+              <span class="court-name">新手友善場</span>
+            </div>
+            <p class="court-desc">適合初學者、親子組及歡樂休閒組，享受輕鬆運動無壓力。</p>
+          </div>
+
+          <!-- Court C -->
+          <div class="court-card court-c">
+            <div class="court-header">
+              <span class="court-badge">C</span>
+              <span class="court-name">綜合練習場</span>
+            </div>
+            <p class="court-desc">自主練習區，請互相禮讓交流，每組練習以 <strong>30 分鐘</strong>為限。</p>
+          </div>
+        </div>
+
+        <!-- Rules for queueing -->
+        <ul class="rules-list" style="margin-top: 6px;">
+          <li>
+            <span><strong class="rule-title">禁止以物佔位：</strong>請親自至專屬「排隊看板」依序掛卡/排隊，<strong>嚴禁用球拍或個人物品代表本人排隊</strong>。</span>
+          </li>
+          <li>
+            <span><strong class="rule-title">局制規定：</strong>比賽場採 <strong>11 分一局制</strong>，完賽後請依序下場，由下一組人員進場比賽。</span>
+          </li>
+          <li>
+            <span><strong class="rule-title">連勝下場限制：</strong>為避免單一隊伍長時間占用球場，<span class="win-highlight">連勝 2 場須全隊下場重新排隊！</span> 確保每位夥伴均有機會上場。</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 3: Equipment & Environment -->
+      <section class="section">
+        <h2 class="section-title">三、 環境維護與器材公約</h2>
+        <ul class="rules-list">
+          <li>
+            <span><strong class="rule-title">愛惜無償資源：</strong>場地、水電與球具均由學校無償提供，請務必愛惜使用並共同保持環境清潔。</span>
+          </li>
+          <li>
+            <span><strong class="rule-title">垃圾隨手帶走：</strong>請將個人水壺、瓶裝飲料及所有垃圾全數隨手帶走，切勿留置於球場或校園內任何角落。</span>
+          </li>
+          <li>
+            <span><strong class="rule-title">離場前共同檢查：</strong>活動結束前請最後離場夥伴共同關閉燈光、水龍頭與電源，並將球具器材歸位整理妥當。</span>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div>溪洲國小家長會匹克球樂活俱樂部 製作</div>
+      <div class="footer-highlight">感謝大家的配合，共同維護優質運動環境！</div>
+    </footer>
+  </div>
+
+</body>
+</html>
