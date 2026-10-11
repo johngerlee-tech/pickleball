@@ -6,7 +6,7 @@
   <title>溪洲國小匹克球樂活俱樂部登記系統</title>
   
   <style>
-    /* 清除所有預設內外邊距，鎖定瀏覽器捲軸 */
+    /* 清除邊界，讓 iframe 完整佔滿整個視窗 */
     html, body {
       margin: 0;
       padding: 0;
@@ -16,7 +16,7 @@
       background-color: #f8fafc;
     }
 
-    /* 裁切外層容器：遮蔽頂部 Google Apps Script 警語列 */
+    /* 滿版容器 */
     .gas-wrapper {
       position: absolute;
       top: 0;
@@ -26,25 +26,15 @@
       overflow: hidden;
     }
 
-    /* 核心位移技巧：
-       將 iframe 向上推移 38px 隱藏 Google 警語，
-       並將高度增加 calc(100% + 38px) 補回底端可視範圍 */
+    /* iframe 完全對齊頂部，不再向上位移，保留完整的頂部按鈕列 */
     .gas-wrapper iframe {
       position: absolute;
-      top: -38px;
+      top: 0;
       left: 0;
       width: 100%;
-      height: calc(100% + 38px);
+      height: 100%;
       border: none;
       display: block;
-    }
-
-    /* 手機直立時若 Google 警語高度稍有差異的微調保護 */
-    @media (max-width: 640px) {
-      .gas-wrapper iframe {
-        top: -40px;
-        height: calc(100% + 40px);
-      }
     }
   </style>
 </head>
@@ -60,7 +50,7 @@
   </div>
 
   <script>
-    // 參數透傳機制：若球友掃描帶有 ?action=checkin 的 GitHub 網址，自動帶入內層 iframe
+    // 參數透傳機制：掃描帶有 ?action=checkin 的 QR Code 時自動傳入 iframe
     (function forwardUrlParams() {
       const currentSearch = window.location.search;
       if (currentSearch) {
