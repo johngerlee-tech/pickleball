@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>溪洲國小匹克球樂活俱樂部登記系統</title>
+  
+  <style>
+    /* 清除所有預設內外邊距，鎖定瀏覽器捲軸 */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #f8fafc;
+    }
+
+    /* 裁切外層容器：遮蔽頂部 Google Apps Script 警語列 */
+    .gas-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* 核心位移技巧：
+       將 iframe 向上推移 38px 隱藏 Google 警語，
+       並將高度增加 calc(100% + 38px) 補回底端可視範圍 */
+    .gas-wrapper iframe {
+      position: absolute;
+      top: -38px;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 38px);
+      border: none;
+      display: block;
+    }
+
+    /* 手機直立時若 Google 警語高度稍有差異的微調保護 */
+    @media (max-width: 640px) {
+      .gas-wrapper iframe {
+        top: -40px;
+        height: calc(100% + 40px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gas-wrapper">
+    <iframe 
+      id="gasFrame"
+      src="https://script.google.com/macros/s/AKfycbyuZbgkZzZ9Upj9P_gXZoWKla87rePlmu5bIA0NV4GuBS69gDJAdsSOXLZlZed3vtHJ/exec"
+      allow="clipboard-write"
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <script>
+    // 參數透傳機制：若球友掃描帶有 ?action=checkin 的 GitHub 網址，自動帶入內層 iframe
+    (function forwardUrlParams() {
+      const currentSearch = window.location.search;
+      if (currentSearch) {
+        const frame = document.getElementById('gasFrame');
+        const baseUrl = frame.src.split('?')[0];
+        frame.src = baseUrl + currentSearch;
+      }
+    })();
+  </script>
+
+</body>
+</html>
